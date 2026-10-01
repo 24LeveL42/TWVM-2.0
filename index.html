@@ -197,7 +197,7 @@ body{
 function checkDigitalKey(mid) {
   var sec = document.getElementById('digitalKeySection');
   if (!sec) return;
-  if (mid && mid.toString().trim().charAt(0) === '8') {
+  var midStr = mid ? mid.toString().trim() : ""; var numPart = midStr.replace(/^MID/i, ""); if (numPart && numPart.charAt(0) === "8") {
     sec.style.display = 'block';
   } else {
     sec.style.display = 'none';
